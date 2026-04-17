@@ -31,7 +31,10 @@ public class Sensor {
         for (double temperatur : temperaturMessdaten) {
             summe += temperatur;
         }
-        return summe / temperaturMessdaten.length;
+        if (temperaturMessdaten.length == 0) 
+            return 0;
+        else 
+            return summe / temperaturMessdaten.length;
     }
 
     // Methode zur Berechnung der Standardabweichung der Temperaturmessdaten
@@ -41,7 +44,10 @@ public class Sensor {
         for (double temperatur : temperaturMessdaten) {
             summeQuadratDifferenzen += Math.pow(temperatur - mittelwert, 2);
         }
-        return Math.sqrt(summeQuadratDifferenzen / temperaturMessdaten.length);
+        if (temperaturMessdaten.length == 0) 
+            return 0;
+        else 
+            return Math.sqrt(summeQuadratDifferenzen / temperaturMessdaten.length);
     }
 
     // Methode zur Berechnung, wie viele Werte um 10 Grad vom Durchschnitt abweichen
