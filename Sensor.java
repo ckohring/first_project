@@ -11,7 +11,7 @@ public class Sensor {
     public Sensor(String standort, String typbezeichnung, int anzahlMessungen) {
         this.standort = standort;
         this.typbezeichnung = typbezeichnung;
-        this.temperaturMessdaten = new double[24]; // Array für Temperaturmessungen
+        this.temperaturMessdaten = new double[anzahlMessungen]; // Array für Temperaturmessungen
     }
 
     // Methode zum Einlesen der Temperaturmessdaten
