@@ -16,12 +16,13 @@ public class Sensor {
 
     // Methode zum Einlesen der Temperaturmessdaten
     public void einlesenTemperaturMessdaten() {
-        Scanner scanner = new Scanner(System.in);
+      try (Scanner scanner = new Scanner(System.in)) {
         System.out.println("Bitte geben Sie die Temperaturmessdaten für einen Tag ein (24 Werte, jeweils eine pro Stunde):");
         for (int i = 0; i < temperaturMessdaten.length; i++) {
             System.out.print("Messung " + (i + 1) + ": ");
             temperaturMessdaten[i] = scanner.nextDouble();
         }
+      }
     }
 
     // Methode zur Berechnung des Mittelwerts der Temperaturmessdaten
